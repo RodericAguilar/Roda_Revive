@@ -40,7 +40,7 @@ if GetResourceState('qb-core') == 'started' then
                             
                         end
                     end
-                else
+                elseif inZone then
                     inZone = false
                     TriggerEvent('qb-core:client:HideText')
                 end
