@@ -26,7 +26,7 @@ if GetResourceState('qb-core') == 'started' then
                 if dist < 3 then
                     if not inZone then
                         local inZone = true
-                        TriggerEvent('qb-core:client:DrawText', "Press ~r~E~w~ to open the Revive Station.", 'right')
+                        TriggerEvent('qb-core:client:DrawText', "Press [E] to open the Revive Station.", 'right')
                     end
                     if dist < 2 then
                         if IsControlJustPressed(0, 38) then
