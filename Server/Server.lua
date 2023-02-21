@@ -1,3 +1,4 @@
+
 RegisterServerEvent('Roda_Revive:server')
 AddEventHandler('Roda_Revive:server', function (target)
     local src = source 
@@ -8,8 +9,12 @@ AddEventHandler('Roda_Revive:server', function (target)
     local targetCoords = GetEntityCoords(targetPed)
     local dist = #(srcCoords - targetCoords)
     if dist < 3 then 
-        TriggerClientEvent('esx_ambulancejob:revive', target)
+        if GetResourceState('es_extended') == 'started' then 
+            TriggerClientEvent('esx_ambulancejob:revive', target)
+        else
+            TriggerClientEvent("hospital:client:RevivePlayer", target)
+        end
     else
-        print('Hacker') -- Possible hacker
+        print('Possible hacker: ' .. source) -- Possible hacker
     end
 end)
