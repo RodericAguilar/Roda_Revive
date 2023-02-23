@@ -8,7 +8,7 @@ AddEventHandler('Roda_Revive:server', function (target)
     local targetCoords = GetEntityCoords(targetPed)
     local dist = #(srcCoords - targetCoords)
     if dist < 3 then 
-        TriggerClientEvent('esx_ambulancejob:revive', target)
+        TriggerClientEvent(Config.ReviveTrigger, target)
     else
         print('Hacker') -- Possible hacker
     end
