@@ -7,7 +7,7 @@ window.addEventListener("message", function(event) {
             $('.person-container').append(`
                 <div class="person" style="background-image: url('https://nui-img/${v.img}/${v.img}');background-position:center;background-repeat: no-repeat;">
                     <p class="nombrepj">${v.name}</p>
-                    <img class="mugshot" src="https://i.imgur.com/H9sVm9W.png" alt="">
+                    <img class="mugshot" src="https://nui-img/${v.img}/${v.img}" alt="">
                     <button id=${v.pid} class="btn-1 revive"> <i class="fa-solid fa-user-doctor"></i> Revive</button>
                 </div>
             `)
