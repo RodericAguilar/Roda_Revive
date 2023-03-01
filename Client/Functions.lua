@@ -1,11 +1,7 @@
-
-
 function OpenStation()
    local mugs =  nearPlayersMug()
    local mugsEncode = json.encode(mugs)
-   if mugsEncode == nil or mugsEncode == '[]' then 
-        ESX.ShowNotification('There is no dead players nearby', 'error', 3000)
-   else
+   if mugsEncode ~= nil and mugsEncode ~= '[]' then 
         open = true
         SetNuiFocus(true, true)
         SetTimecycleModifier('hud_def_blur') -- blur
@@ -19,6 +15,7 @@ function OpenStation()
         end
         return true
    end
+   return false
 end
 
 
